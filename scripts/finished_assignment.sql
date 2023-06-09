@@ -49,24 +49,24 @@
 -- ORDER BY avg_star_rating DESC;
 
 --10.	Add the code to order the query in #9 from highest to lowest average star rating. Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? What is that rating? General Motors 4.199...
-SELECT company, AVG(star_rating) AS avg_star_rating
-FROM data_analyst_jobs
-WHERE review_count > 5000
-	AND company IS NOT NULL
-GROUP BY company
-ORDER BY avg_star_rating DESC;
+-- SELECT company, AVG(star_rating) AS avg_star_rating
+-- FROM data_analyst_jobs
+-- WHERE review_count > 5000
+-- 	AND company IS NOT NULL
+-- GROUP BY company
+-- ORDER BY avg_star_rating DESC;
 
 --11.	Find all the job titles that contain the word ‘Analyst’. How many different job titles are there? 774
-SELECT DISTINCT title
-FROM data_analyst_jobs
-WHERE UPPER (title) LIKE '%ANALYST%';
+-- SELECT DISTINCT title
+-- FROM data_analyst_jobs
+-- WHERE UPPER (title) LIKE '%ANALYST%';
 
 
 --12.	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? 4 What word do these positions have in common? All has to do with visualization.
-SELECT DISTINCT title
-FROM data_analyst_jobs
-WHERE LOWER (title) NOT LIKE '%analyst%'
-	AND LOWER (title) NOT LIKE '%analytics%';
+-- SELECT DISTINCT title
+-- FROM data_analyst_jobs
+-- WHERE LOWER (title) NOT LIKE '%analyst%'
+-- 	AND LOWER (title) NOT LIKE '%analytics%';
 
 
 --**BONUS:**
@@ -75,18 +75,18 @@ WHERE LOWER (title) NOT LIKE '%analyst%'
 -- - Order your results so that the domain with the greatest number of `hard to fill` jobs is at the top. 
 --  - Which three industries are in the top 4 on this list? How many jobs have been listed for more than 3 weeks for each of the top 4? Internet and Software (62), Banks and Financial Services (61), Consulting and Business Services (57), Health Care (52)
 
-SELECT domain, count(*) AS older_listings
-FROM data_analyst_jobs
-WHERE domain IS NOT NULL
-	AND days_since_posting > 21
-	AND UPPER (skill) LIKE '%SQL%'
-GROUP BY domain
-ORDER BY older_listings DESC;
+-- SELECT domain, count(*) AS older_listings
+-- FROM data_analyst_jobs
+-- WHERE domain IS NOT NULL
+-- 	AND days_since_posting > 21
+-- 	AND UPPER (skill) LIKE '%SQL%'
+-- GROUP BY domain
+-- ORDER BY older_listings DESC;
 
-SELECT count(*)
-FROM data_analyst_jobs
-WHERE domain IS NOT NULL
-	AND days_since_posting > 21
-	AND UPPER (skill) LIKE '%SQL%'
+-- SELECT count(*)
+-- FROM data_analyst_jobs
+-- WHERE domain IS NOT NULL
+-- 	AND days_since_posting > 21
+-- 	AND UPPER (skill) LIKE '%SQL%'
 
 
