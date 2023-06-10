@@ -10,8 +10,7 @@
 --3.	How many postings are in Tennessee? 21 How many are there in either Tennessee or Kentucky? 27
 -- SELECT COUNT (*)
 -- FROM data_analyst_jobs
--- WHERE location = 'TN'
--- 	OR location = 'KY';
+-- WHERE location IN ('TN','KY')
 
 --4.	How many postings in Tennessee have a star rating above 4? 3
 -- SELECT COUNT (*)
@@ -59,10 +58,10 @@
 --11.	Find all the job titles that contain the word ‘Analyst’. How many different job titles are there? 774
 -- SELECT DISTINCT title
 -- FROM data_analyst_jobs
--- WHERE UPPER (title) LIKE '%ANALYST%';
+-- WHERE title iLIKE '%ANALYST%';
 
 
---12.	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? 4 What word do these positions have in common? All has to do with visualization.
+--12.	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? 4 What word do these positions have in common? Tableau
 -- SELECT DISTINCT title
 -- FROM data_analyst_jobs
 -- WHERE LOWER (title) NOT LIKE '%analyst%'
